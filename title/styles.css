@@ -1,0 +1,267 @@
+body {
+  font-family: Arial, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url(title.jpg);
+  background-size: cover;
+  overflow: hidden;
+}
+
+#main-title-screen,
+#lebel-selection-screen {
+  text-align: center;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+#description-screen,
+#tips-screen,
+#use-screen {
+  text-align: left;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*以下タイトル画面*/
+#main-title-screen h1 {
+  font-size: 100px;
+  color: transparent;
+  -webkit-text-stroke: 2px #454545;
+  text-shadow: 3px 3px #81bedb;
+  margin-bottom: 0;
+}
+
+#main-title-screen h2 {
+  font-size: 70px;
+  color: transparent;
+  -webkit-text-stroke: 2px #454545;
+  text-shadow: 3px 3px #81bedb;
+  margin-top: 0;
+}
+
+#start-text {
+  cursor: pointer;
+  font-size: 30px;
+  color: #fff;
+  text-shadow: 2px 2px 10px #4d9bc1, -2px 2px 10px #4d9bc1,
+    2px -2px 10px #4d9bc1, -2px -2px 10px #4d9bc1;
+  animation: blink 1.5s infinite;
+}
+
+.credits {
+  font-size: 30px;
+  color: #238be6;
+  background: #f9f9f9e1; 
+  margin-bottom: 0;
+  padding: 0.5em 2em 0.5em 2em;
+}
+
+/*以下レベル選択画面*/
+#level-selection-screen h1 {
+  font-size: 50px;
+  color: transparent;
+  -webkit-text-stroke: 2px #454545;
+  text-shadow: 3px 3px #81bedb;
+  margin-bottom: 0;
+}
+
+#level-selection-screen h2 {
+  font-size: 40px;
+  color: transparent;
+  -webkit-text-stroke: 2px #454545;
+  text-shadow: 3px 3px #81bedb;
+  margin-top: 0;
+}
+#level-selection {
+  margin-top: 20px;
+}
+
+.level-button {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #3d9ecb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.level-button:hover {
+  background-color: blue;
+}
+
+.Description {
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #ebbd67;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.Description:hover{
+  background-color: orange;
+}
+.levelToCredit,.creditToTitle{
+  display: inline-block;
+  margin: 10px;
+  padding: 15px 30px;
+  font-size: 30px;
+  cursor: pointer;
+  background-color: #67ebad;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+.Credit:hover.creditToTitle:hover{
+  background-color: rgb(21, 255, 0);
+}
+
+/*以下説明・TIPS・操作説明画面*/
+
+#description-screen h1,
+#tips-screen h1,
+#use-screen h1 {
+  position: fixed;
+  top: 0;
+  font-size: 40px;
+  color: rgba(255, 255, 255, 0.534);
+  -webkit-text-stroke: 2px #2891ed;
+  text-shadow: 3px 3px #81bedb;
+
+}
+#description-screen h2,
+#tips-screen h2,
+#use-screen h2 {
+  font-size: 30px;
+  color: #238be6;
+  background: #f9f9f9e1; 
+  margin-bottom: 0;
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+
+#langChenge {
+  padding: 0.5em 1em;
+  margin: 2em 0;
+  font-weight: bold;
+  color: #6091d3; /*文字色*/
+  background: #fff;
+  border: solid 3px #6091d3; /*線*/
+  border-radius: 10px; /*角の丸み*/
+}
+#langChenge input[type="radio"] {
+  display: none;
+}
+
+/* === 各ラジオボタンのラベルをボタンに変更 == */
+#langChenge label {
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-shadow: 2px 2px #999;
+  padding: 2px 6px;
+}
+
+#langJa:not(:checked) ~ div *[lang="ja"] {
+  display: none;
+}
+#langEn:not(:checked) ~ div *[lang="en"] {
+  display: none;
+}
+#langZh:not(:checked) ~ div *[lang="zh"] {
+  display: none;
+}
+
+/* === 選択されている言語のラベル色を変更 ==== */
+#langJa:checked ~ label[for="langJa"] {
+  background: #ffa64d;
+}
+#langEn:checked ~ label[for="langEn"] {
+  background: #ffa64d;
+}
+#langZh:checked ~ label[for="langZh"] {
+  background: #ffa64d;
+}
+
+.return-level-selection,
+.descriptionToTips,
+.descriptionToUse,
+.useToDescription,
+.tipsToDescription {
+  .descriptionText ol,
+  .descriptionText ul {
+    margin: 5px;
+    padding: 3px;
+  }
+}
+.return-level-selection,
+.descriptionToTips,
+.descriptionToUse,
+.useToDescription,
+.tipsToDescription {
+  display: inline-block;
+  margin: 5px;
+  padding: 15px 15px;
+  font-size: 15px;
+  cursor: pointer;
+  background-color: #3d9ecb;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.return-level-selection:hover,
+.descriptionToTips:hover,
+.descriptionToUse:hover,
+.useToDescription:hover,
+.tipsToDescription:hover {
+  background-color: blue;
+}
+
+#use-screen text {
+  font-size: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  -webkit-text-stroke: 1.5px #2891ed;
+}
+#tips-screen ul{
+  font-size: 20px;  
+  color: #668ad8;/*文字色*/
+  border: dashed 2px #668ad8;/*破線 太さ 色*/
+  background: #f1f8ff; /*背景色*/
+  padding: 0.5em 0.5em 0.5em 2em;
+}
+#tips-screen ul li{
+  line-height: 1.5;
+  padding: 0.5em 0;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+audio {
+  display: none;
+}

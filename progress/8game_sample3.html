@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <title>間違い探しゲーム</title>
+    <meta http-equiv="Pragma" content="no-cache" />
+    <meta http-equiv="Cache-Control" content="no-cache" />
+    <meta http-equiv="Expires" content="0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="8game_sample3.css" />
+  </head>
+  <body>
+    <audio src="../sound/acoustic01b.mp3" id="main-bgm" controls loop></audio>
+    <audio src="../sound/wark.mp3" id="wark"></audio>
+    <div id="game-container" class="game-container">
+      <!-- 背景画像 -->
+      <div class="image-container">
+        <img
+          src="../images/ORIGINAL.PNG"
+          id="original-image"
+          alt="Original Image"
+          class="image"
+        />
+        <img src="" id="game-image" alt="Game Image" class="image" />
+        <div id="overlay-text">0番店</div>
+      </div>
+      <!-- 人 -->
+      <div id="human" class="human">
+        <img src="../human/human.png" class="human-img" />
+      </div>
+      <!-- <div class="message" id="message"></div> -->
+    </div>
+
+    <div id="result-container">
+      <div class="message" id="result-message"></div>
+      <button id="retry-button" onCLick="location.href='../title/title.html'">
+        タイトルへ戻る
+      </button>
+      <button
+        id="play-again-button"
+        onCLick="location.href='../title/title.html'"
+      >
+        他の難易度で遊ぶ
+      </button>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="8game_sample3.js"></script>
+  </body>
+</html>
